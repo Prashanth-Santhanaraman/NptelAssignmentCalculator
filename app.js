@@ -172,6 +172,9 @@ function compareNumbers(a, b) {
 function resultDiv(inpvalue){
     const h1 = document.createElement("h1");
     const h2 = document.createElement("h2");
+    const h2one = document.createElement("h2");
+    const h2two = document.createElement("h2");
+    const h2three = document.createElement("h2");
     const btn = document.createElement("button")
     btn.textContent= "Reset"
     btn.classList.add("resetBtn")
@@ -190,8 +193,14 @@ function resultDiv(inpvalue){
     }
   }else{
     h1.remove()
-    h2.textContent="1. You might not entered all the assignment score (OR)"+"\n2. You might have entered the values in negative (OR)"+"\t"+"\n3. You might have entered the values greater than 100"
+    h2.textContent = "Error: \n"
+    h2one.textContent = "1. You might not have entered all the assignment scores"
+    h2two.textContent = "2. You might have entered negative values\n"
+    h2three.textContent = "3. You might have entered values greater than 100"
     resultBox.append(h2)
+    resultBox.append(h2one)
+    resultBox.append(h2two)
+    resultBox.append(h2three)
     resultBox.classList.add("resultBoxStyle")
     resultBox.style.backgroundColor="rgb(255, 75, 75)"
   }
