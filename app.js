@@ -120,7 +120,7 @@ function calculatefun2(week1value,week2value,week3value,week4value,week5value,we
     resultDiv(bestofsix)
 }
 function calculatefun3(week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value,week9value,week10value,week11value,week12value){
-  var week12list = [week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value]
+  var week12list = [week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value,week9value,week10value,week11value,week12value]
   var sorted12week = week12list.sort(compareNumbers).reverse()
   var bestofeight = ((sorted12week[0]+sorted12week[1]+sorted12week[2]+sorted12week[3]+sorted12week[4]+sorted12week[5]+sorted12week[6]+sorted12week[7])/8)*0.25
   resultDiv(bestofeight)
