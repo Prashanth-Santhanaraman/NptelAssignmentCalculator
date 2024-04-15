@@ -1,4 +1,4 @@
-alert("NOTE:\n 1. Enter all the week assignment score. if you have not attended particular week then enter it as 0\n 2. This is an unofficial nptel calculator")
+alert("NOTE:\n 1. Enter all the week assignment score. if you have not attend particular week then enter it as 0\n 2. This is an unofficial nptel calculator")
 
 const btn = document.getElementById("btn");
 const numberOfWeeks = document.getElementById("weeks");
@@ -34,6 +34,7 @@ function textBox(val) {
   inputBox.append(calculateBtn);
 
  calculateBtn.addEventListener("click", (e) => {
+
     if(val==4){
         const week1 = document.getElementById("week1")
         const week2 = document.getElementById("week2")
@@ -45,6 +46,10 @@ function textBox(val) {
         const week3value = parseInt(week3.value)
         const week4value = parseInt(week4.value)
 
+      //   if (!validateInputValue(week1value) || !validateInputValue(week2value) || !validateInputValue(week3value) || !validateInputValue(week4value)) {
+      //     resultDiv(NaN); // Display error message
+      //     return;
+      // }
 
         calculatefun1(week1value,week2value,week3value,week4value)
     }
@@ -67,6 +72,11 @@ function textBox(val) {
         const week6value = parseInt(week6.value)
         const week7value = parseInt(week7.value)
         const week8value = parseInt(week8.value)
+
+        // if (!validateInputValue(week1value) || !validateInputValue(week2value) || !validateInputValue(week3value) || !validateInputValue(week4value) || !validateInputValue(week5value) || !validateInputValue(week6value) || !validateInputValue(week7value) || !validateInputValue(week8value)) {
+        //   resultDiv(NaN); // Display error message
+        //   return;
+     // }
 
         calculatefun2(week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value)
     }
@@ -102,7 +112,27 @@ function textBox(val) {
   });
 
 }
+
+
+
+function validateInputValue(value) {
+  // Check if the input is a valid number
+  if (isNaN(value)) {
+      return false;
+  }
+  // Check if the input is negative or greater than 100
+  if (value < 0 || value > 100) {
+      return false;
+  }
+  return true;
+}
+
+
 function calculatefun1(week1value,week2value,week3value,week4value){
+  if (!validateInputValue(week1value) || !validateInputValue(week2value) || !validateInputValue(week3value) || !validateInputValue(week4value)) {
+    resultDiv(NaN); // Display error message
+    return;
+}
     var week4list = [week1value,week2value,week3value,week4value]
     var sorted4week = week4list.sort(compareNumbers).reverse()
     var bestofthree = ((sorted4week[0]+sorted4week[1]+sorted4week[2])/3)*0.25
@@ -114,12 +144,21 @@ function calculatefun1(week1value,week2value,week3value,week4value){
     }
 } 
 function calculatefun2(week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value){
+  if (!validateInputValue(week1value) || !validateInputValue(week2value) || !validateInputValue(week3value) || !validateInputValue(week4value) || !validateInputValue(week5value) || !validateInputValue(week6value) || !validateInputValue(week7value) || !validateInputValue(week8value)) {
+    resultDiv(NaN); // Display error message
+    return;
+}
     var week8list = [week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value]
     var sorted8week = week8list.sort(compareNumbers).reverse()
     var bestofsix = ((sorted8week[0]+sorted8week[1]+sorted8week[2]+sorted8week[3]+sorted8week[4]+sorted8week[5])/6)*0.25
     resultDiv(bestofsix)
 }
 function calculatefun3(week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value,week9value,week10value,week11value,week12value){
+  if (!validateInputValue(week1value) || !validateInputValue(week2value) || !validateInputValue(week3value) || !validateInputValue(week4value) || !validateInputValue(week5value) || !validateInputValue(week6value) || !validateInputValue(week7value) || !validateInputValue(week8value) || !validateInputValue(week9value) || !validateInputValue(week10value) || !validateInputValue(week11value) || !validateInputValue(week12value)) {
+    resultDiv(NaN); // Display error message
+    return;
+}
+  
   var week12list = [week1value,week2value,week3value,week4value,week5value,week6value,week7value,week8value,week9value,week10value,week11value,week12value]
   var sorted12week = week12list.sort(compareNumbers).reverse()
   var bestofeight = ((sorted12week[0]+sorted12week[1]+sorted12week[2]+sorted12week[3]+sorted12week[4]+sorted12week[5]+sorted12week[6]+sorted12week[7])/8)*0.25
@@ -138,7 +177,7 @@ function resultDiv(inpvalue){
     btn.classList.add("resetBtn")
     h1.textContent = "Your result is"
     h2.textContent = inpvalue.toFixed(2)
-    if(h2.textContent!=="NaN"){
+  if(h2.textContent!=="NaN"){
     if(inpvalue>=10){
       resultBox.append(h1)
       resultBox.append(h2)
@@ -151,7 +190,7 @@ function resultDiv(inpvalue){
     }
   }else{
     h1.remove()
-    h2.textContent="Please Enter all the assignment score"
+    h2.textContent="1. You might not entered all the assignment score (OR)"+"\n2. You might have entered the values in negative (OR)"+"\t"+"\n3. You might have entered the values greater than 100"
     resultBox.append(h2)
     resultBox.classList.add("resultBoxStyle")
     resultBox.style.backgroundColor="rgb(255, 75, 75)"
