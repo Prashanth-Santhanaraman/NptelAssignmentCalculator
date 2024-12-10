@@ -1,4 +1,4 @@
-alert("NOTE:\n 1. Enter all the week assignment score. if you have not attend particular week then enter it as 0\n 2. This is an unofficial nptel calculator")
+alert("NOTE:\n 1. Enter all the week assignment score. if you have not attend particular week then enter it as 0\n 2. This is a unofficial nptel calculator")
 
 const btn = document.getElementById("btn");
 const numberOfWeeks = document.getElementById("weeks");
