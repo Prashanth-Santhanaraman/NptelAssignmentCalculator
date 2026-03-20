@@ -3,55 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quickly calculate your NPTEL assignment scores using this NPTEL calculator.">
+    <meta name="description" content="Quickly calculate your NPTEL assignment scores." />
     <title>NPTEL Assignment Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <h1 style="text-align: center; margin-top: 50px; color:rgb(64, 57, 255);">
-      NPTEL ASSIGNMENT CALCULATOR
-    </h1>
-    <div class="top-container" id="top-container">
-      <form>
-        <label for="weeks" id="label">Choose how many weeks</label>
-        <br />
-        <select name="weeks" id="weeks">
-          <option value="4">4</option>
-          <option value="8">8</option>
-          <option value="12">12</option>
-        </select>
-        <button type="submit" id="btn" class="btnStyle">Continue</button>
-      </form>
-    </div>
-    <div id="inputBox"></div>
-    <div id="resultBox"></div>
-    <div id="resetDiv"></div>
+
+    <header>
+      <div class="header-inner">
+        <span class="header-badge">NPTEL</span>
+        <div class="header-divider"></div>
+        <span class="header-title">Assignment <span>Calculator</span></span>
+      </div>
+    </header>
+
+    <main>
+      <p class="page-eyebrow">Academic Tool</p>
+      <h1>Score Calculator</h1>
+      <p class="page-subtext">Enter your weekly assignment scores to compute your weighted NPTEL assignment score accurately.</p>
+      <div class="divider"></div>
+      <div class="notice">
+        <i class="fas fa-info-circle"></i>
+        Best of <strong>N–2</strong> weeks are counted towards your final score.
+      </div>
+
+      <div class="card" id="top-container">
+        <div class="card-label">Step 1 — Configuration</div>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="weeks" id="label">Course Duration</label>
+              <select name="weeks" id="weeks">
+                <option value="4">4 Weeks</option>
+                <option value="8">8 Weeks</option>
+                <option value="12">12 Weeks</option>
+              </select>
+            </div>
+            <button type="submit" id="btn" class="btnStyle">
+              <i class="fas fa-arrow-right"></i> Continue
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="inputBox"></div>
+      <div id="resultBox"></div>
+      <div id="resetDiv"></div>
+    </main>
 
     <footer class="footer" id="footer">
-      <h1>Get in touch</h1>
-      <div class="social">
-        <a href="https://www.linkedin.com/in/prashanth-santhanaraman"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="https://github.com/Prashanth-Santhanaraman"
-          ><i class="fa-brands fa-github"> </i></i
-        ></a>
-        <p class="copyright">Prashanth Santhanaraman @ 2025</p>
+      <div class="footer-inner">
+        <p class="footer-title">Get in touch</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/prashanth-santhanaraman"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Prashanth-Santhanaraman"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="copyright">Prashanth Santhanaraman &copy; 2024</p>
       </div>
     </footer>
-    <script type="module" src="app.js"></script>
+
+    <script src="app.js"></script>
   </body>
 </html>
